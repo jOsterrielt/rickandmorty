@@ -1,0 +1,87 @@
+.card {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 16px;
+    background-color: #ffffff11;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .xButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: aliceblue; 
+    position: absolute;
+    top: 8px;
+    right: 8px; /* Ajusta la posición a la esquina superior izquierda */
+    z-index: 1; 
+    transition: scale  0.1s ease;
+  }
+  .xButton:hover {
+    color: #ff0000;
+    scale: 1.4;
+  } 
+
+  .favoriteButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-left: 8px;
+    transition: scale 0.1s ease;
+  }
+  .favoriteButton:hover {
+    scale: 1.4;
+  }
+  
+  .favoriteButtonFav {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    margin-top: 8px;
+    margin-left: 8px;
+    transition: scale 0.1s ease;
+  }
+  .favoriteButtonFav:hover {
+scale: 1.4;
+  }
+
+  .card h2 {
+    color: #fff;
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  
+  .card h2.name {
+    margin: 8px 0;
+    font-size: 36px; /* Tamaño de fuente un poco más grande */
+    transition: scale  0.1s ease;
+  }
+
+  .card h2.name:hover {
+    scale: 1.1;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+    border-radius: 10px;
+  }

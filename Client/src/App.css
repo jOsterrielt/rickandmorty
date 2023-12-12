@@ -1,0 +1,8 @@
+.App {
+  background: linear-gradient(to bottom, #001f3f, #004080);
+  margin: 0;
+  padding: 0;
+  background-size:cover;
+  color: #fff; 
+  font-family: 'Roboto Condensed', sans-serif;
+}

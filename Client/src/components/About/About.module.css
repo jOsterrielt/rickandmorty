@@ -1,0 +1,59 @@
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 64px);
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.137);
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin: 10px 0px 10px 0px;
+  }
+  
+  .aboutContainer h2 {
+    font-size: 24px;
+    margin: 16px 0;
+    color: aliceblue;
+  }
+  
+  .aboutContainer p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: aliceblue;
+  }
+  
+  .highlightName {
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 36px;
+    transition: text-shadow 0.3s ease, transform 0.3s ease; /* Agrega transiciones suaves */
+  }
+  
+  /* Agrega la animación de sombra al pasar el mouse sobre el nombre */
+  .highlightName:hover {
+    text-shadow: 0 0 5px yellowgreen; /* Cambia la sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse sobre el nombre */
+  }
+
+.henry {
+      font-weight: bold;
+    color: yellow;
+  }
+
+  .profileImage {
+    width: 200px;
+    height: 200px; /* Establece el mismo ancho y alto para crear un círculo */
+    border-radius: 50%; /* Hace que la imagen tenga forma de círculo */
+    object-fit: cover; /* Ajusta la imagen para llenar todo el círculo */
+    margin-top: 16px;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+  } /* Aplica la transición solo a la imagen */
+  
+  
+  /* Estilo adicional al pasar el mouse sobre la imagen */
+  .profileImage:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse sobre la imagen */
+  }
