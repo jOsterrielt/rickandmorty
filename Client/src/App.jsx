@@ -21,17 +21,22 @@ function App() {
   const [randomCharacter, setRandomCharacter] = useState([]);
   const [access, setAccess] = useState(false);
 
-  /* const email = "prueba@email.com";
-  const password = "Prueba123"; */
+  /*   const email = "prueba@email.com";
+  const password = "Prueba123";  */
 
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+  async function login(userData) {
+    try {
+      const { email, password } = userData;
+      const URL = "http://localhost:3001/rickandmorty/login/";
+      const { data } = await axios(
+        URL + `?email=${email}&password=${password}`
+      );
       const { access } = data;
       setAccess(data);
       access && navigate("/home");
-    });
+    } catch (error) {
+      alert(error.message);
+    }
   }
 
   const logout = () => {
@@ -53,25 +58,29 @@ function App() {
           data.onClose = () => handleClose(data.id);
           setRandomCharacter((oldChars) => [...oldChars, data]);
         } else {
-          window.alert("No se pudo obtener un personaje aleatorio.");
+          alert("No se pudo obtener un personaje aleatorio.");
         }
       })
       .catch((error) => {
         console.error("Error al obtener el personaje aleatorio:", error);
-        window.alert("Error al obtener un personaje aleatorio.");
+        alert(error.message);
       });
   };
 
-  function onSearch(id) {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
+  async function onSearch(id) {
+    try {
+      const characterId = characters.filter((char) => char.id === Number(id));
+      if (characterId.length) return alert(`${characterId[0].name} ya existe!`);
+      const { data } = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+      if (data.name) {
+        setCharacters((oldChars) => [...oldChars, data]);
       }
-    );
+    } catch (error) {
+      console.error("Error: ", error);
+      window.alert("¡No hay personajes con este ID!");
+    }
   }
 
   function handleClose(id) {
